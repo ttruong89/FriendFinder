@@ -35,7 +35,7 @@
 
 		<h3><strong>Question 1</strong></h3>
 		<h4>You tend to keep a close circle of friends as opposed to a large group.</h4>
-	 	<select data-placeholder="" class="chosen-select" id="q1">
+	 	<select id="q1">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -46,7 +46,7 @@
 
 		<h3><strong>Question 2</strong></h3>
 		<h4>You are highly extroverted.</h4>
-	 	<select data-placeholder="" class="chosen-select" id="q2">
+	 	<select id="q2">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -58,7 +58,7 @@
 
 		<h3><strong>Question 3</strong></h3>
 		<h4>You enjoy time to yourself.</h4>
-	 	<select data-placeholder="" class="chosen-select" id="q3">
+	 	<select id="q3">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -70,7 +70,7 @@
 
 		<h3><strong>Question 4</strong></h3>
 		<h4>You like to make others laugh.</h4>
-	 	<select data-placeholder="" class="chosen-select" id="q4">
+	 	<select id="q4">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -82,7 +82,7 @@
 
 		<h3><strong>Question 5</strong></h3>
 		<h4>People upset you.</h4>
-	 	<select data-placeholder="" class="chosen-select" id="q5">
+	 	<select id="q5">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -94,7 +94,7 @@
 
 		<h3><strong>Question 6</strong></h3>
 		<h4>You have a strong work ethic.</h4>
-	 	<select data-placeholder="" class="chosen-select" id="q6">
+	 	<select id="q6">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -106,7 +106,7 @@
 
 		<h3><strong>Question 7</strong></h3>
 		<h4>You can hold a conversation with just about anyone.</h4>
-	 	<select data-placeholder="" class="chosen-select" id="q7">
+	 	<select id="q7">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -117,7 +117,7 @@
 
 		<h3><strong>Question 8</strong></h3>
 		<h4>You use your imagination quite a bit.</h4>
-	 	<select data-placeholder="" class="chosen-select" id="q8">
+	 	<select id="q8">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -128,7 +128,7 @@
 
 		<h3><strong>Question 9</strong></h3>
 		<h4>You respect others' opinions.</h4>
-	 	<select data-placeholder="" class="chosen-select" id="q9">
+	 	<select id="q9">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -139,7 +139,7 @@
 
 		<h3><strong>Question 10</strong></h3>
 		<h4>You feed off of the energy of other people.</h4>
-	 	<select data-placeholder="" class="chosen-select" id="q10">
+	 	<select id="q10">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -164,96 +164,42 @@
 	</div>
 
 	<!-- Modal -->
-	<div id="resultsModal" class="modal fade" role="dialog">
-	  <div class="modal-dialog">
-
-	    <!-- Modal content-->
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal">&times;</button>
-	        <h2 class="modal-title"><strong>Best Match</strong></h2>
-	      </div>
-	      <div class="modal-body">
-	        <h2 id="matchName"></h2>
-	        <img id="matchImg" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	      </div>
-	    </div>
-
-	  </div>
+	<div id="bestFriendModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">X</button>
+					<h2 class="modal-title">Best Match</h2>
+				</div>
+				<div class="modal-body">
+					<h2 id="bestFriendName"></h2>
+					<img id="bestFriendImg" src="https://scontent-dfw1-1.xx.fbcdn.net/t31.0-8/13116244_10107568960519320_7024834722285826624_o.jpg" onError="this.src='https://answers.atlassian.com/images/icons/profilepics/default.png'" width=500px alt="Best Friend">
+				</div>
+			</div>
+		</div>
 	</div>
 
-  <script type="text/javascript">
+  	<script type="text/javascript">
 
-  	// Chosen CSS
-    var config = {
-      '.chosen-select'           : {},
-      '.chosen-select-deselect'  : {allow_single_deselect:true},
-      '.chosen-select-no-single' : {disable_search_threshold:10},
-      '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
-      '.chosen-select-width'     : {width:"95%"}
-    }
-    for (var selector in config) {
-      $(selector).chosen(config[selector]);
-    }
-
-    // Capture the form inputs 
-    $("#submit").on("click", function(){
-
-    	// Form validation
-    	function validateForm() {
-		  var isValid = true;
-		  $('.form-control').each(function() {
-		    if ( $(this).val() === '' )
-		        isValid = false;
-		  });
-
-		  $('.chosen-select').each(function() {
-
-		  	if( $(this).val() === "")
-		  		isValid = false
-		  })
-		  return isValid;
+  	// User input and submit click function.
+	$('#submit').on("click", function() {
+		var userInput = {
+			name: $('#name').val().trim(),
+			photo: $('#photo').val().trim(),
+			scores: [$('#q1').val().trim(), $('#q2').val().trim(), $('#q3').val().trim(), $('#q4').val().trim(), $('#q5').val().trim(), $('#q6').val().trim(), $('#q7').val().trim(), $('#q8').val().trim(), $('#q9').val().trim(), $('#q10').val().trim()]
 		}
+		// Grab the URL of the website.
+		var currentURL = window.location.origin;
+		// AJAX post the data to the friends API.
+		$.post(currentURL + '/api/friends', userInput, function(data) {
+			$("#bestFriendName").text(data.name);
+			$("#bestFriendImg").attr("src", data.photo);
+			$("#bestFriendModal").modal("show");
+		});
+		return false;
+	});
 
-		// If all required fields are filled
-		if (validateForm() == true)
-		{
-			// Create an object for the user's data
-	    	var userData = {
-	    		name: $("#name").val(),
-	    		photo: $("#photo").val(),
-	    		scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
-	    	}
-
-
-	    	// Grab the URL of the website
-	    	var currentURL = window.location.origin;
-
-	    	// AJAX post the data to the friends API. 
-	    	$.post(currentURL + "/api/friends", userData, function(data){
-
-	    		// Grab the result from the AJAX post so that the best match's name and photo are displayed.
-	    		$("#matchName").text(data.name);
-	    		$('#matchImg').attr("src", data.photo);
-
-		    	// Show the modal with the best match 
-		    	$("#resultsModal").modal('toggle');
-
-	    	});
-		}
-		else
-		{
-			alert("Please fill out all fields before submitting!");
-		}
-    	
-    	return false;
-    });
-
-
-  </script>
+  	</script>
 
 </body>
 </html>

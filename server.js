@@ -18,8 +18,8 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // ROUTER
 // Mapping out routes.
 
-// require("./app/routing/apiRoutes")(app);
-require("./app/routing/htmlRoutes.js")(app);
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 // LISTENER
 // Message to show app listening on PORT...
