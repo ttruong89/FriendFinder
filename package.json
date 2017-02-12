@@ -1,0 +1,27 @@
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "A node express app that utilizes mySQL and routes.  Allows the user to match compatibility with other friends.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "nodemon": "^1.11.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttruong89/FriendFinder.git"
+  },
+  "author": "Tony Truong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ttruong89/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/ttruong89/FriendFinder#readme"
+}
