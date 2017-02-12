@@ -23,6 +23,6 @@ require("./app/routing/htmlRoutes")(app);
 
 // LISTENER
 // Message to show app listening on PORT...
-app.listen(provess.env.PORT || 5000, function() {
+app.listen(process.env.PORT || 5000, function() {
 	console.log("App listening on PORT: " + PORT);
 });
